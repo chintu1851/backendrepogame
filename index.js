@@ -23,6 +23,7 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get("/getres", async (req, res) => {
   
   if (!mongoose.connection.readyState) {
+    console.log("Database connection error");
     return res.status(500).json({ error: "Database connection not established" });
   }
   
