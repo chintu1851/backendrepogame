@@ -17,6 +17,9 @@ const dataSchema = new mongoose.Schema({
 
 const Data = mongoose.model("Data", dataSchema);
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+
 app.get("/getres", async (req, res) => {
   try {
     const allData = await Data.find({}).lean();
